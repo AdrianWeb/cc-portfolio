@@ -1,0 +1,289 @@
+/*
+font-family: 'Lato', sans-serif;
+font-family: 'Prompt', sans-serif;
+font-family: 'Rubik', sans-serif;
+*/
+
+/* General */
+
+html {
+  scroll-behavior: smooth;
+}
+
+:target:before {
+  content: '';
+  display: block;
+  height: 50px;
+  margin: -50px 0 0;
+}
+
+body {
+  background: linear-gradient(0deg, #6a8d92ff, #80b192ff, #a1e887ff);
+  font-family: 'Lato', sans-serif;
+}
+
+header {
+  height: 10vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h1,
+h2 {
+  font-family: 'Rubik', sans-serif;
+}
+
+h1 {
+  margin: 1em;
+  font-size: 3em;
+}
+
+h2 {
+  background: black;
+  color: #a1e887ff;
+  text-indent: 2em;
+}
+
+ul {
+  padding-inline: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navigation */
+
+#navbar {
+  width: 100%;
+}
+
+#navbar ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#navbar ul li {
+  display: inline;
+  list-style: none;
+  white-space: nowrap;
+}
+
+#navbar ul li a span {
+  margin: 5px;
+}
+
+#navbar ul li a {
+  position: relative;
+  font-family: 'Prompt', sans-serif;
+  font-weight: 300;
+  color: black;
+  font-size: 1.5em;
+  margin: 10px;
+}
+
+#navbar ul li a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  background-color: black;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+#navbar ul li a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/* Main */
+
+main {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1em 0;
+  background: linear-gradient(0deg, #493548ff, #4b4e6dff);
+  border-radius: 10px;
+  color: #a1e887ff;
+  box-shadow: hsla(0, 0%, 0%, 0.8) 10px 10px 80px;
+}
+
+/* About */
+
+#about-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-flow: row wrap;
+}
+
+#about-content section {
+  margin: 2em;
+  flex: 1 1 400px;
+}
+
+#about-content section p {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#about-content aside {
+  margin: 2em;
+  align-self: center;
+  flex: 1 0 50%;
+  max-width: 500px;
+}
+
+#about-content aside img {
+  width: 50%;
+  border-radius: 50%;
+  margin: 0 auto;
+  box-shadow: hsla(0, 0%, 0%, 0.8) 10px 10px 80px;
+}
+
+/* Achievements */
+
+#achievements ul {
+  margin: 1em auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+#achievements ul li {
+  display: inline;
+  list-style: none;
+  text-indent: 2em;
+  white-space: nowrap;
+  margin: 5px;
+  transition: transform 0.2s;
+}
+
+#achievements ul li:hover {
+  transform: scale(1.05);
+}
+
+#achievements ul li a {
+  color: #a1e887ff;
+}
+
+#achievements ul li span {
+  margin: 0 5px;
+}
+
+/* Skills */
+
+#skills ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#skills ul li {
+  list-style: none;
+  display: inline;
+  margin: 10px;
+  width: 70px;
+  transition: transform 0.2s;
+}
+
+#skills ul li:hover {
+  transform: scale(1.05);
+}
+
+#skills ul li a {
+  color: #a1e887ff;
+}
+
+/* Contact */
+
+#contact ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+#contact ul li {
+  list-style: none;
+  display: inline;
+  margin: 10px;
+  transition: transform 0.2s;
+}
+
+#contact ul li:hover {
+  transform: scale(1.05);
+}
+
+#contact ul li a {
+  color: #a1e887ff;
+  text-decoration: none;
+  font-size: 2em;
+}
+
+/* Footer */
+
+footer {
+  margin: 1em auto;
+  text-align: center;
+}
+
+/* Small screens */
+
+@media only screen and (max-width: 900px) {
+  body {
+    padding-top: 40px;
+  }
+
+  header {
+    display: block;
+    height: auto;
+  }
+
+  header h1 {
+    margin: 20px;
+    line-height: 1;
+  }
+
+  #navbar {
+    position: fixed;
+    top: 0;
+    border-bottom: 1px solid black;
+    background: #a1e887ff;
+    transition: top 0.3s;
+  }
+
+  #navbar ul {
+    margin: 0 auto;
+  }
+
+  main {
+    width: 90%;
+  }
+
+  #skills ul {
+    flex-flow: row wrap;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  main {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  #navbar ul li a span {
+    display: none;
+  }
+}
